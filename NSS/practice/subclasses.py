@@ -37,7 +37,8 @@ class IsClawed:
 
 class Dog(Animal, IsWhiskered):
     def __init__(self, name):
-        super().__init__(name, "Dog") #showing how to use super()over initializing the Animal class here--dont need to pass in self after the init b/c knows
+        super().__init__(name, "Dog")
+        #showing how to use super()over initializing the Animal class here--dont need to pass in self after the init b/c knows
         IsWhiskered.__init__(self)
         print("Dog Constructor made a new dog")
 

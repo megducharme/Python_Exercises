@@ -27,7 +27,7 @@ class Cars:
 
 
 if __name__ == "__main__":
-    Cars.create_car_dictionary()
+    Cars.read_car_makes()
 
 
 

@@ -4,10 +4,10 @@ groceryList = []
 
 print("""
 --------- GROCERY LIST ---------
-------- [A] Add New Items ------
-------- [B] Delete an Item ------
-------- [C] Show Items ---------
-------- [D] Exit ---------------
+------- [a] Add New Items ------
+------- [b] Delete an Item ------
+------- [c] Show Items ---------
+------- [d] Exit ---------------
   """)
 
 def showList():
@@ -21,19 +21,19 @@ def task():
 
   groceryItem = input("What would you like to do? ")
 
-  if groceryItem == "B":
+  if groceryItem == "b":
     showList()
     itemToDelete = input("What do you want to remove? ")
     groceryList.remove(itemToDelete)
     showList()
     task()
-  if groceryItem == "C":
+  if groceryItem == "c":
     showList()
     task()
-  if groceryItem == "D":
+  if groceryItem == "d":
     print("Things to get at the groery store are " + ", ".join(groceryList))
     exit()
-  if groceryItem == "A":
+  if groceryItem == "a":
     grocery_to_add = input("What would you like to add? ")
     addGroceries(grocery_to_add)
     task()

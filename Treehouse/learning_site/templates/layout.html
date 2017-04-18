@@ -1,0 +1,18 @@
+<!doctype html>
+{% load static from staticfiles %}
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    </head>
+    <body>
+        <div class="site-container">
+            <nav>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'courses:list' %}">Courses</a>
+                <!-- courses:list means go look in the courses namespace and find the list route -->
+            </nav>
+        {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
