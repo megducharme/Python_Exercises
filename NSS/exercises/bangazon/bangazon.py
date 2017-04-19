@@ -41,9 +41,31 @@ class Department(object):
             raise ValueError("Please provide a supervisor name")
 
 
-hr = Department("Human Resources")
-hr.name = "Human Resourcez"
-hr.supervisor = "Meg Ducharme"
-print(hr.name)
-print(hr.supervisor)
+class HumanResources(Department):
+    """Class for representing Human Resources department
+
+    Methods: __init__, add_policy, get_policy, etc.
+    """
+
+    def __init__(self, name, supervisor, employee_count):
+        super().__init__(name, supervisor, employee_count)
+        self.policies = set()
+
+    def add_policy(self, policy_name, policy_text):
+        """Adds a policy, as a tuple, to the set of policies
+
+        Arguments:
+        policy_name (string)
+        policy_text (string)
+        """
+
+        self.policies.add((policy_name, policy_text))
+
+    def __str__(self):
+        return "The {} department is supervised by {} and has {} employees".format(self.name, self.supervisor, self.employee_count)
+
+
+hr = HumanResources("HR", "Toby Flenderson", 3)
+print(hr)
+
 
