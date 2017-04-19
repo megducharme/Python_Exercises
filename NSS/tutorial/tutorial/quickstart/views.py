@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User, Group
+# from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from tutorial.quickstart.models import *
 from tutorial.quickstart.serializers import *
@@ -12,12 +12,21 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
+
 class HockeyTeamsViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
     queryset = HockeyTeams.objects.all()
     serializer_class = HockeyTeamsSerializer
+
+
+class HockeyPlayerViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = HockeyPlayer.objects.all()
+    serializer_class = HockeyPlayerSerializer
 
 
 class GroupViewSet(viewsets.ModelViewSet):

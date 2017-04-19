@@ -5,7 +5,8 @@ from tutorial.quickstart import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'hockeyteam', views.GroupViewSet)
+router.register(r'hockeyteams', views.HockeyTeamsViewSet)
+router.register(r'hockeyplayer', views.HockeyPlayerViewSet)
 
 
 # Wire up our API using automatic URL routing.

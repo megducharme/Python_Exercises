@@ -14,6 +14,11 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ('url', 'name')
 
+class HockeyPlayerSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = HockeyPlayer
+        exclude = ()
+
 class HockeyTeamsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = HockeyTeams
